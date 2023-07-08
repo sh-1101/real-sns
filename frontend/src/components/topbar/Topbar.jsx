@@ -14,7 +14,7 @@ export default function Topbar() {
           <input
             type="text"
             className="searchInput"
-            placeholder="探し物何ですか？"
+            placeholder="探し物は何ですか？"
           />
         </div>
       </div>
