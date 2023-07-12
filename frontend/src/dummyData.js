@@ -47,7 +47,7 @@ export const Posts = [
   },
   {
     id: 3,
-    desc: "ShinCodeさんの解説が分かりやすい。",
+    desc: "Hirokiさんの解説が分かりやすい。",
     photo: "assets/post/3.jpeg",
     date: "10分前",
     userId: 3,
