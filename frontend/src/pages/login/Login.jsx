@@ -15,7 +15,7 @@ export default function Login() {
             <input type="text" className="loginInput" placeholder="Eメール" />
             <input
               type="text"
-              className="loginInputPassword"
+              className="loginInput"
               placeholder="パスワード"
             />
             <button className="loginButton">ログイン</button>
