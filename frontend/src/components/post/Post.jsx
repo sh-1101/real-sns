@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Post.css";
 import { MoreVert } from "@mui/icons-material";
-import { Users } from "../../dummyData";
+// import { Users } from "../../dummyData";
+import axios from "axios";
 
 export default function Post({ post }) {
   const [like, setLike] = useState(post.like);
@@ -12,6 +13,16 @@ export default function Post({ post }) {
     setIsLiked(!isLiked);
   };
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const response = await axios.get(`/users/${post.userId}`);
+      setUser(response.data);
+    };
+    fetchUser();
+  }, []);
   return (
     <div className="post">
       <div className="postWrapper">
@@ -19,15 +30,12 @@ export default function Post({ post }) {
           <div className="postTopLeft">
             <img
               src={
-                PUBLIC_FOLDER +
-                Users.filter((user) => user.id === post.id)[0].profilePicture
+                user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"
               }
               alt=""
               className="postProfileImg"
             />
-            <span className="postUsername">
-              {Users.filter((user) => user.id === post.id)[0].username}
-            </span>
+            <span className="postUsername">{user.username}</span>
             <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
