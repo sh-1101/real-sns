@@ -5,7 +5,7 @@ import { MoreVert } from "@mui/icons-material";
 import axios from "axios";
 
 export default function Post({ post }) {
-  const [like, setLike] = useState(post.like);
+  const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLike = () => {
