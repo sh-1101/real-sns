@@ -32,7 +32,7 @@ export default function Profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Timeline />
+            <Timeline username="Hiroki Sugiyama" />
             <Rightbar profile />
           </div>
         </div>
