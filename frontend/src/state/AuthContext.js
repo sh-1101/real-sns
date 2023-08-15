@@ -9,7 +9,7 @@ const initialState = {
     username: "Hiroki Sugiyama",
     email: "hiroki.sugiyama.dev@gmail.com",
     password: "abcdef",
-    profilePicture: "",
+    profilePicture: "/person/1.jpeg",
     coverPicture: "",
     followers: [],
     followings: [],
